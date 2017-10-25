@@ -13,9 +13,12 @@ namespace MVCAssignment5.Controllers
         ItemRepository repo = new ItemRepository();
 
         // GET: Items
-        public ActionResult Index()
+        public ActionResult Index(string search="")
         {
-            return View(repo.GetAllItems());
+            if (search.Equals(""))
+                return View(repo.GetAllItems());
+            else
+                return View(repo.SearchItems(search));
         }
 
         public ActionResult Details(int id)
