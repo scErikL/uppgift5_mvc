@@ -9,10 +9,15 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<form action="Index" method="get" >
+<!--<form action="" method="get" >-->
+<!--</form>  "Index", "Items",  -->
+<p>
+    @using (@Html.BeginForm("Index", "Items", FormMethod.Get))
+    {
     <input type="text" placeholder="enter search phrase" name="search" />
     <input type="submit" value="Search" />
-</form>
+    }
+</p>
 <table class="table">
     <tr>
         <th>
